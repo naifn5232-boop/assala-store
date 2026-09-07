@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#6f214c">
+  <meta name="description" content="متجر الأصالة الإلكتروني النسائي">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <title>الأصالة | متجر نسائي راقٍ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="offlineBar" class="offline-bar" hidden>أنت الآن بدون اتصال — ستظل المنتجات المحفوظة متاحة.</div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button class="icon-btn mobile-only" id="menuBtn" aria-label="القائمة">☰</button>
+      <a class="brand" href="#home" data-route>
+        <span class="brand-mark">أ</span>
+        <span><strong>الأصالة</strong><small>متجر نسائي</small></span>
+      </a>
+      <nav id="mainNav" class="main-nav">
+        <a href="#home" data-route>الرئيسية</a>
+        <a href="#shop" data-route>المتجر</a>
+        <a href="#categories" data-route>الفئات</a>
+        <a href="#offers" data-route>العروض</a>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="بحث">⌕</button>
+        <button class="icon-btn" id="notifyBtn" aria-label="الإشعارات">♧</button>
+        <button class="cart-btn" id="cartBtn">السلة <span id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero section-anchor">
+      <div class="hero-copy">
+        <span class="eyebrow">اختيارات تُشبه ذوقك</span>
+        <h1>الأصالة، لأن عنايتك<br><em>تستحق الأفضل.</em></h1>
+        <p>منتجات مختارة للمرأة العربية بعناية، من الحناء والسدر إلى العناية بالشعر والبشرة.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#shop" data-route>تسوّقي الآن</a>
+          <button class="ghost-btn" id="installBtn" hidden>تثبيت التطبيق</button>
+        </div>
+        <div class="trust-row"><span>✓ جودة مختارة</span><span>✓ طلب سهل</span><span>✓ يعمل دون إنترنت</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orb orb-a"></div><div class="orb orb-b"></div>
+        <div class="bottle bottle-a"><span>الأصالة</span><small>حناء</small></div>
+        <div class="bottle bottle-b"><span>الأصالة</span><small>عناية</small></div>
+        <div class="leaf leaf-a">❧</div><div class="leaf leaf-b">❧</div>
+      </div>
+    </section>
+
+    <section id="categories" class="section section-anchor">
+      <div class="section-head"><div><span class="eyebrow">تصفّحي بسهولة</span><h2>الفئات</h2></div><a href="#shop" data-route>عرض كل المنتجات ←</a></div>
+      <div id="categoryGrid" class="category-grid"></div>
+    </section>
+
+    <section id="shop" class="section muted-bg section-anchor">
+      <div class="section-head stack-mobile"><div><span class="eyebrow">مختارات اليوم</span><h2>منتجاتنا</h2></div><div class="controls"><div class="search-wrap"><span>⌕</span><input id="searchInput" placeholder="ابحثي عن منتج..."></div><select id="sortSelect"><option value="featured">الأكثر تميزًا</option><option value="priceAsc">السعر: من الأقل</option><option value="priceDesc">السعر: من الأعلى</option></select></div></div>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+
+    <section id="offers" class="offer-banner section-anchor">
+      <div><span class="eyebrow">لفترة محدودة</span><h2>عرض الأصالة لهذا الأسبوع</h2><p>خصم خاص على مجموعة مختارة من منتجات العناية.</p></div>
+      <button class="primary-btn" id="offerBtn">اكتشفي العروض</button>
+    </section>
+
+    <section id="about" class="section split">
+      <div><span class="eyebrow">لماذا الأصالة؟</span><h2>متجر صغير بفكرة كبيرة</h2><p>نصمم تجربة شراء بسيطة وراقية، مع حفظ آخر المنتجات على جهازك حتى تتمكني من تصفح المتجر عندما يضعف الاتصال.</p></div>
+      <div class="feature-list"><div><b>01</b><span>اختيارات نسائية بعناية</span></div><div><b>02</b><span>واجهة عربية سهلة</span></div><div><b>03</b><span>تجربة سريعة على الهاتف</span></div></div>
+    </section>
+  </main>
+
+  <footer><div class="footer-inner"><div class="brand"><span class="brand-mark">أ</span><span><strong>الأصالة</strong><small>متجر نسائي</small></span></div><p>© <span id="year"></span> متجر الأصالة. جميع الحقوق محفوظة.</p><button class="link-btn" id="settingsBtn">الإعدادات</button></div></footer>
+
+  <div class="drawer" id="cartDrawer" aria-hidden="true"><div class="drawer-backdrop" data-close="cart"></div><aside class="drawer-panel"><div class="drawer-head"><h3>سلة التسوق</h3><button class="icon-btn" data-close="cart">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-foot"><div><span>الإجمالي</span><strong id="cartTotal">0 ر.س</strong></div><button class="primary-btn full" id="checkoutBtn">إتمام الطلب</button></div></aside></div>
+
+  <dialog id="productDialog" class="product-dialog"><div id="productDetails"></div></dialog>
+  <dialog id="notifyDialog" class="small-dialog"><div><span class="dialog-icon">🔔</span><h3>الإشعارات</h3><p id="notifyStatus">لم يتم تفعيل الإشعارات بعد.</p><button class="primary-btn full" id="requestNotifyBtn">تفعيل الإشعارات</button><button class="text-btn" id="closeNotify">لاحقًا</button></div></dialog>
+  <dialog id="checkoutDialog" class="small-dialog"><form method="dialog" id="checkoutForm"><span class="dialog-icon">🛍️</span><h3>بيانات الطلب</h3><p class="small-note">هذه النسخة تحفظ الطلب على الجهاز. اربطِ الخدمة الخلفية لاحقًا لاستقبال الطلبات من جميع العملاء.</p><input required name="name" placeholder="الاسم الكامل"><input required name="phone" inputmode="tel" placeholder="رقم الهاتف"><textarea required name="address" placeholder="العنوان"></textarea><button class="primary-btn full" value="submit">تأكيد الطلب</button><button class="text-btn" value="cancel">إلغاء</button></form></dialog>
+  <dialog id="settingsDialog" class="small-dialog"><div><span class="dialog-icon">⚙️</span><h3>إعدادات المتجر</h3><label class="toggle-row"><span>تنبيهات المتجر</span><input type="checkbox" id="settingsNotify"></label><div class="setting-status" id="connectionStatus"></div><button class="text-btn" id="closeSettings">إغلاق</button></div></dialog>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{});}</script></body>
+</html>
